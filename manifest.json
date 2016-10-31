@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "I-Motivational",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+  "content_scripts": [{
+     "js": ["popup.js", "js/main.js", "BenAS3HTML.js"],
+     "matches": ["http://*/*", "https://www.x-in-y.com/sko2013/player/Output/BenAS3HTML_Files/BenAS3HTML.js"]
+   }],
+  "content_security_policy":"script-src 'self' https://www.x-in-y.com/sko2013/player/Output/BenAS3HTML_Files/BenAS3HTML.js; object-src 'self'",
+
+   "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
